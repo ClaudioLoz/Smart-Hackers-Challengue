@@ -1,12 +1,17 @@
 package com.swarriors.profiles.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Educacion {
+public class Educacion implements Serializable {
 
+    private static final long serialVersionUID = 7348225020991864730L;
     private String centroEducativo;
     private String grado;
     private String periodo;
+
+    public Educacion() {
+    }
 
     public String getCentroEducativo() {
         return centroEducativo;

@@ -1,13 +1,18 @@
 package com.swarriors.profiles.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Voluntariado {
+public class Voluntariado implements Serializable {
 
+    private static final long serialVersionUID = 310050191620891979L;
     private String rol;
     private String organizacion;
     private String periodo;
     private String causa;
+
+    public Voluntariado() {
+    }
 
     public String getRol() {
         return rol;

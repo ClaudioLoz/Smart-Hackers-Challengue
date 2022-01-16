@@ -1,11 +1,13 @@
 package com.swarriors.profiles.service;
 
 import com.swarriors.profiles.dto.PerfilDto;
+import com.swarriors.profiles.model.Perfil;
+import com.swarriors.profiles.model.URL;
 import com.swarriors.profiles.model.test;
 
-public interface PerfilService {
+import javax.xml.xpath.XPathExpressionException;
 
-    PerfilDto crearPerfil(String url);
-    String test(test number);
+public interface PerfilService{
 
+    Perfil crearPerfil(URL url) throws InterruptedException;
 }

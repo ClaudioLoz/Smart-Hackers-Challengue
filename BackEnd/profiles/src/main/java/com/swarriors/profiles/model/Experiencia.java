@@ -1,17 +1,23 @@
 package com.swarriors.profiles.model;
 
-public class Experiencia {
+import java.io.Serializable;
+import java.util.List;
+import java.util.Objects;
 
-    private String cargo;
+public class Experiencia implements Serializable {
+
+    private static final long serialVersionUID = -2295960147323678860L;
+    private List<Cargo> cargo;
     private String compania;
-    private String periodo;
-    private String ubicacion;
 
-    public String getCargo() {
+    public Experiencia() {
+    }
+
+    public List<Cargo> getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(List<Cargo> cargo) {
         this.cargo = cargo;
     }
 
@@ -23,19 +29,25 @@ public class Experiencia {
         this.compania = compania;
     }
 
-    public String getPeriodo() {
-        return periodo;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Experiencia)) return false;
+        Experiencia that = (Experiencia) o;
+        return Objects.equals(cargo, that.cargo) && Objects.equals(compania, that.compania);
     }
 
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
+    @Override
+    public int hashCode() {
+        return Objects.hash(cargo, compania);
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Experiencia{");
+        sb.append("cargo=").append(cargo);
+        sb.append(", compania='").append(compania).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

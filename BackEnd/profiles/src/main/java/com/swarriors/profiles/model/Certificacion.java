@@ -1,13 +1,18 @@
 package com.swarriors.profiles.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Certificacion {
+public class Certificacion implements Serializable {
 
+    private static final long serialVersionUID = -7288449908887622835L;
     private String nombre;
     private String organizacion;
     private String fechaEmision;
     private String idCredencial;
+
+    public Certificacion() {
+    }
 
     public String getNombre() {
         return nombre;

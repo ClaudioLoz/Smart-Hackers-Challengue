@@ -1,19 +1,25 @@
 package com.swarriors.profiles.model;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class Perfil {
+public class Perfil implements Serializable {
 
+    private static final long serialVersionUID = -8447094665078012906L;
     private String nombre;
     private String trabajoActual;
-    private String ciudad;
+    private String residencia;
     private String linkLinkedin;
     private List<Experiencia> experiencias;
     private List<Educacion> educacion;
     private List<Voluntariado> voluntariado;
     private List<Certificacion> certificaciones;
     private List<String> skills;
+    private List<String> intereses;
+
+    public Perfil() {
+    }
 
     public String getNombre() {
         return nombre;
@@ -31,12 +37,12 @@ public class Perfil {
         this.trabajoActual = trabajoActual;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public String getResidencia() {
+        return residencia;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void setResidencia(String residencia) {
+        this.residencia = residencia;
     }
 
     public String getLinkLinkedin() {
@@ -87,17 +93,25 @@ public class Perfil {
         this.skills = skills;
     }
 
+    public List<String> getIntereses() {
+        return intereses;
+    }
+
+    public void setIntereses(List<String> intereses) {
+        this.intereses = intereses;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Perfil)) return false;
         Perfil perfil = (Perfil) o;
-        return Objects.equals(nombre, perfil.nombre) && Objects.equals(trabajoActual, perfil.trabajoActual) && Objects.equals(ciudad, perfil.ciudad) && Objects.equals(linkLinkedin, perfil.linkLinkedin) && Objects.equals(experiencias, perfil.experiencias) && Objects.equals(educacion, perfil.educacion) && Objects.equals(voluntariado, perfil.voluntariado) && Objects.equals(certificaciones, perfil.certificaciones) && Objects.equals(skills, perfil.skills);
+        return Objects.equals(nombre, perfil.nombre) && Objects.equals(trabajoActual, perfil.trabajoActual) && Objects.equals(residencia, perfil.residencia) && Objects.equals(linkLinkedin, perfil.linkLinkedin) && Objects.equals(experiencias, perfil.experiencias) && Objects.equals(educacion, perfil.educacion) && Objects.equals(voluntariado, perfil.voluntariado) && Objects.equals(certificaciones, perfil.certificaciones) && Objects.equals(skills, perfil.skills) && Objects.equals(intereses, perfil.intereses);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, trabajoActual, ciudad, linkLinkedin, experiencias, educacion, voluntariado, certificaciones, skills);
+        return Objects.hash(nombre, trabajoActual, residencia, linkLinkedin, experiencias, educacion, voluntariado, certificaciones, skills, intereses);
     }
 
     @Override
@@ -105,13 +119,14 @@ public class Perfil {
         final StringBuilder sb = new StringBuilder("Perfil{");
         sb.append("nombre='").append(nombre).append('\'');
         sb.append(", trabajoActual='").append(trabajoActual).append('\'');
-        sb.append(", ciudad='").append(ciudad).append('\'');
+        sb.append(", residencia='").append(residencia).append('\'');
         sb.append(", linkLinkedin='").append(linkLinkedin).append('\'');
         sb.append(", experiencias=").append(experiencias);
         sb.append(", educacion=").append(educacion);
         sb.append(", voluntariado=").append(voluntariado);
         sb.append(", certificaciones=").append(certificaciones);
         sb.append(", skills=").append(skills);
+        sb.append(", intereses=").append(intereses);
         sb.append('}');
         return sb.toString();
     }
