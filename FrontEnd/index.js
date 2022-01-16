@@ -2,10 +2,9 @@ var search = document.getElementById("search");
 var button = document.getElementById("button");
 var input = document.getElementById("input");
 let info = undefined;
-const profileURL = "http://127.0.0.1:5500/profile.html";
+const profileURL = location.href + "profile.html";
 const IPBack =
-  "http://95b7-181-65-18-224.ngrok.io/web-perfil/perfil/crearPerfil";
-
+  "https://8d11-181-65-18-224.ngrok.io/web-perfil/perfil/crearPerfil";
 function isValidHttpUrl(string) {
   let url;
 
@@ -39,10 +38,9 @@ async function loading() {
     },
   });
   info = await info.json();
-  console.log(info);
+
   localStorage.setItem("object", JSON.stringify(info));
   search.classList.remove("loading");
-
   location.assign(profileURL);
 }
 
