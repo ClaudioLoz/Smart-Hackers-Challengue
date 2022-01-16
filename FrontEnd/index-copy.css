@@ -9,10 +9,10 @@
 
 body {
   align-items: center;
-  background: #01254b;
+  background: #292929;
   color: #fff;
   display: flex;
-  font: 30px "Lato", arial, sans-serif;
+  font: 27px "Lato", arial, sans-serif;
   flex-flow: column nowrap;
   height: 100vh;
   justify-content: center;
@@ -20,7 +20,7 @@ body {
 }
 
 .note {
-  font-size: 0.375em;
+  font-size: 0.4em;
   font-weight: bold;
   text-transform: uppercase;
   color: #0070e7;
@@ -28,7 +28,7 @@ body {
 
 #search {
   align-items: center;
-  background: #007bff;
+  background: #626262;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,7 @@ body {
 
 #search:hover,
 #search:focus {
-  background: #004ea1;
+  background: #bebebe;
 }
 
 #search button,
